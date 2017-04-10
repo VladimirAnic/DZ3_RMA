@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Tasky</string>
+    <string name="text_new_task">New task</string>
+    <string name="text_new_category">New Category</string>
+    <string name="et_new_category">Enter a new category</string>
+    <string name="btn_add_new_category">Add new category</string>
+    <string name="tv_new_category">New category</string>
 </resources>

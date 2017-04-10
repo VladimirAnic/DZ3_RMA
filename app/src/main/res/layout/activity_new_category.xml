@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNewCategory"
+        android:text="@string/tv_new_category"
+        android:textSize="@dimen/heading_size"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNewCategory"
+        android:hint="@string/et_new_category"
+        android:layout_marginTop="@dimen/margin_new_category"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bAddNewCategory"
+        android:layout_marginTop="@dimen/margin_new_category_btn"
+        android:layout_marginLeft="@dimen/side_margin_new_category_btn"
+        android:layout_marginRight="@dimen/side_margin_new_category_btn"
+        android:text="@string/btn_add_new_category"/>
+
+
+
+</LinearLayout>

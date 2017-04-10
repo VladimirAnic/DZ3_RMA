@@ -5,12 +5,13 @@ package com.example.vladimir.dz3;
  */
 
 public class Task {
-    private String mTitle, mContent, mCategory;
+    private String mTitle, mContent, mCategory, mStatus;
 
-    public Task(String title, String content, String category) {
+    public Task(String title, String content, String category, String status) {
         mTitle = title;
         mContent = content;
         mCategory = category;
+        mStatus = status;
     }
 
     public String getTitle() {
@@ -23,6 +24,10 @@ public class Task {
 
     public String getContent() {
         return mContent;
+    }
+
+    public String getStatus() {
+        return mStatus;
     }
 
 }
