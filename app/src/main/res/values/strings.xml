@@ -5,4 +5,15 @@
     <string name="et_new_category">Enter a new category</string>
     <string name="btn_add_new_category">Add new category</string>
     <string name="tv_new_category">New category</string>
+    <string name="et_new_task">Add new task</string>
+    <string name="message_priority">Choose priority</string>
+    <string name="message_category">Choose category</string>
+    <string name="btn_add_new_task">Add new task</string>
+
+
+    <string-array name="priority">
+        <item>Top</item>
+        <item>Medium</item>
+        <item>Normal</item>
+    </string-array>
 </resources>
