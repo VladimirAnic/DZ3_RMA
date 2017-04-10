@@ -5,46 +5,59 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tvAddNewTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvAddNewTask"
-        android:text="@string/text_new_category"
-        android:textSize="@dimen/heading_size"/>
+        android:text="@string/text_new_task"
+        android:textSize="@dimen/heading_size" />
 
     <EditText
+        android:id="@+id/etNewTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etNewTask"
-        android:hint="@string/et_new_task"
-        android:layout_marginTop="@dimen/margin_new_category"/>
+        android:layout_marginTop="@dimen/margin_new_category"
+        android:hint="@string/et_new_task" />
+
+    <TextView
+        android:id="@+id/tvAddNewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_new_task_content"
+        android:layout_marginTop="@dimen/margin_new_content_text" />
+
+    <EditText
+        android:id="@+id/etNewTaskContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_new_category"
+        android:hint="@string/et_new_task_content" />
+
     <Spinner
         android:id="@+id/spPriority"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"
+        android:layout_marginTop="@dimen/margin_new_task_spinner"
         android:entries="@array/priority"
         android:prompt="@string/message_priority"
-        android:layout_marginTop="@dimen/margin_new_task_spinner"
-        />
+        android:spinnerMode="dropdown" />
 
     <Spinner
         android:id="@+id/spCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"
+        android:layout_marginTop="@dimen/margin_new_task_spinner"
         android:entries="@array/category"
         android:prompt="@string/message_category"
-        android:layout_marginTop="@dimen/margin_new_task_spinner"
-        />
+        android:spinnerMode="dropdown" />
 
     <Button
+        android:id="@+id/bAddNewTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bAddNewTask"
-        android:layout_marginTop="@dimen/margin_new_task_btn"
         android:layout_marginLeft="@dimen/side_margin_new_task_btn"
         android:layout_marginRight="@dimen/side_margin_new_task_btn"
-        android:text="@string/btn_add_new_task"/>
+        android:layout_marginTop="@dimen/margin_new_task_btn"
+        android:text="@string/btn_add_new_task" />
 
 
 </LinearLayout>

@@ -9,5 +9,6 @@
     <dimen name="margin_new_task_spinner">20sp</dimen>
     <dimen name="margin_new_task_btn">150sp</dimen>
     <dimen name="side_margin_new_task_btn">40sp</dimen>
+    <dimen name="margin_new_content_text">15sp</dimen>
 
 </resources>
