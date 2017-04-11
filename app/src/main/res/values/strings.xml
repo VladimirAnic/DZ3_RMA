@@ -18,4 +18,11 @@
         <item>Medium</item>
         <item>Normal</item>
     </string-array>
+
+    <string-array name="category">
+        <item>Home</item>
+        <item>Work</item>
+        <item>School</item>
+    </string-array>
+
 </resources>

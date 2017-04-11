@@ -58,6 +58,9 @@ public class TaskAdapter extends BaseAdapter {
         }
         return convertView;
     }
+    public void insert(Task task) {
+        this.mTasks.add(task);
+        this.notifyDataSetChanged();}
 
     public static class ViewHolder {
         public TextView tvTaskTitle, tvTaskCategory, tvTaskContent;
