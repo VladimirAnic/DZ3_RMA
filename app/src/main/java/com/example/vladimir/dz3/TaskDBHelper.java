@@ -43,7 +43,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
     //SQL statements
     static final String CREATE_TABLE_MY_TASKS="CREATE TABLE "+Schema.TABLE_MY_TASKS+"("+Schema.TITLE+" TEXT, "+Schema.CONTENT+" TEXT, "+Schema.CATEGORY+ " TEXT, "+Schema.STATUS+" TEXT);";
     static final String DROP_TABLE_MY_TASKS = "DROP TABLE IF EXISTS " + Schema.TABLE_MY_TASKS;
-    static final String SELECT_ALL_TASKS = "SELECT " + Schema.TITLE + " FROM " + Schema.TABLE_MY_TASKS;
+    static final String SELECT_ALL_TASKS="SELECT * FROM "+Schema.TABLE_MY_TASKS;
 
     // CRUD should be performed on another thread
     public void insertTask(Task task){

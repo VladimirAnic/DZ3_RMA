@@ -28,8 +28,8 @@ public class NewTask extends Activity implements View.OnClickListener {
     private void setUpUI() {
         this.spPriority = (Spinner) findViewById(R.id.spPriority);
         this.etTitle = (EditText) findViewById(R.id.etNewTask);
-        this.etNewCategory = (EditText) findViewById(R.id.etNewCategory);
         this.etNewTaskContent = (EditText) findViewById(R.id.etNewTaskContent);
+        this.etNewCategory = (EditText) findViewById(R.id.etNewCategory);
         this.bAddNewTask = (Button) findViewById(R.id.bAddNewTask);
 
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
