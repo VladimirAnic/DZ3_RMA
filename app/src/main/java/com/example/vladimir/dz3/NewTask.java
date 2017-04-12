@@ -9,13 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import static com.example.vladimir.dz3.R.id.etNewCategory;
 import static com.example.vladimir.dz3.R.id.lvMain;
 
-public class NewTask extends Activity {
+public class NewTask extends Activity implements View.OnClickListener {
 
-    Spinner spPriority, spCategory;
-    EditText etNewTask;
-    Button bAddNewCategory;
+    Spinner spPriority;
+    EditText etNewTaskContent,etNewCategory, etTitle;
+    Button bAddNewTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,10 @@ public class NewTask extends Activity {
 
     private void setUpUI() {
         this.spPriority = (Spinner) findViewById(R.id.spPriority);
-        this.spCategory = (Spinner) findViewById(R.id.spCategory);
-        this.etNewTask = (EditText) findViewById(R.id.etNewTask);
-        this.bAddNewCategory = (Button) findViewById(R.id.bAddNewCategory);
+        this.etTitle = (EditText) findViewById(R.id.etNewTask);
+        this.etNewCategory = (EditText) findViewById(R.id.etNewCategory);
+        this.etNewTaskContent = (EditText) findViewById(R.id.etNewTaskContent);
+        this.bAddNewTask = (Button) findViewById(R.id.bAddNewTask);
 
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
                 .createFromResource(this, R.array.priority,
@@ -39,23 +41,22 @@ public class NewTask extends Activity {
         spPriority.setAdapter(staticAdapter);
 
 
-        staticAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spCategory.setAdapter(staticAdapter);
-
-        this.bAddNewCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent explicitIntent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(explicitIntent);
-                Task task = new Task("My task","Content","Category","Status");
-                TaskDBHelper.getInstance(getApplicationContext()).insertTask(task);
-                TaskAdapter adapter = (TaskAdapter) lvMain.getAdapter();
-                this.adapter.insertTask(task);
-            }
-
-
-        });
+        this.bAddNewTask.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent explicitIntent = new Intent(getApplicationContext(), MainActivity.class);
+
+
+        String Title = etTitle.getText().toString();
+        String Content = etNewTaskContent.getText().toString();
+        String Category = etNewCategory.getText().toString();
+        String Status = spPriority.getSelectedItem().toString();
+
+        Task task = new Task(Title,Content,Category,Status);
+        TaskDBHelper.getInstance(getApplicationContext()).insertTask(task);
+        explicitIntent.setClass(getApplicationContext(), MainActivity.class);
+        startActivity(explicitIntent);
+    }
 }

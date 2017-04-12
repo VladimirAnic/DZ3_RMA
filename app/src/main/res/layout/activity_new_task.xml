@@ -32,6 +32,20 @@
         android:layout_marginTop="@dimen/margin_new_category"
         android:hint="@string/et_new_task_content" />
 
+    <TextView
+        android:id="@+id/tvAddNewCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_new_category"
+        android:layout_marginTop="@dimen/margin_new_content_text" />
+
+    <EditText
+        android:id="@+id/etNewCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_new_category"
+        android:hint="@string/et_new_category" />
+
     <Spinner
         android:id="@+id/spPriority"
         android:layout_width="match_parent"
@@ -41,14 +55,6 @@
         android:prompt="@string/message_priority"
         android:spinnerMode="dropdown" />
 
-    <Spinner
-        android:id="@+id/spCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_new_task_spinner"
-        android:entries="@array/category"
-        android:prompt="@string/message_category"
-        android:spinnerMode="dropdown" />
 
     <Button
         android:id="@+id/bAddNewTask"

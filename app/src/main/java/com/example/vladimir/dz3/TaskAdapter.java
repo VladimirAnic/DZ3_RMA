@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 
 public class TaskAdapter extends BaseAdapter {
+
     private ArrayList<Task> mTasks;
 
     public TaskAdapter(ArrayList<Task> tasks) {
@@ -58,17 +59,19 @@ public class TaskAdapter extends BaseAdapter {
         }
         return convertView;
     }
-    public void insert(Task task) {
-        this.mTasks.add(task);
-        this.notifyDataSetChanged();}
+
+    public void delete(int position) {
+        this.mTasks.remove(position);
+        this.notifyDataSetChanged();
+    }
 
     public static class ViewHolder {
         public TextView tvTaskTitle, tvTaskCategory, tvTaskContent;
 
-        public ViewHolder(View bookView) {
-            tvTaskTitle = (TextView) bookView.findViewById(R.id.tvTaskTitle);
-            tvTaskContent = (TextView) bookView.findViewById(R.id.tvTaskContent);
-            tvTaskCategory = (TextView) bookView.findViewById(R.id.tvTaskCategory);
+        public ViewHolder(View taskView) {
+            tvTaskTitle = (TextView) taskView.findViewById(R.id.tvTaskTitle);
+            tvTaskContent = (TextView) taskView.findViewById(R.id.tvTaskContent);
+            tvTaskCategory = (TextView) taskView.findViewById(R.id.tvTaskCategory);
         }
     }
 }

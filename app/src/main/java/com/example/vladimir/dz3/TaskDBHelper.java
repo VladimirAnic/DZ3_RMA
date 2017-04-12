@@ -41,8 +41,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
     }
 
     //SQL statements
-    static final String CREATE_TABLE_MY_TASKS = "CREATE TABLE " + Schema.TABLE_MY_TASKS +
-            " (" + Schema.TITLE + " TEXT," + Schema.CONTENT + " TEXT"+ Schema.CATEGORY  + "TEXT)";
+    static final String CREATE_TABLE_MY_TASKS="CREATE TABLE "+Schema.TABLE_MY_TASKS+"("+Schema.TITLE+" TEXT, "+Schema.CONTENT+" TEXT, "+Schema.CATEGORY+ " TEXT, "+Schema.STATUS+" TEXT);";
     static final String DROP_TABLE_MY_TASKS = "DROP TABLE IF EXISTS " + Schema.TABLE_MY_TASKS;
     static final String SELECT_ALL_TASKS = "SELECT " + Schema.TITLE + " FROM " + Schema.TABLE_MY_TASKS;
 
@@ -52,27 +51,28 @@ public class TaskDBHelper extends SQLiteOpenHelper {
         contentValues.put(Schema.TITLE, task.getTitle());
         contentValues.put(Schema.CONTENT, task.getContent());
         contentValues.put(Schema.CATEGORY, task.getCategory());
+        contentValues.put(Schema.STATUS, task.getStatus());
         SQLiteDatabase writeableDatabase = this.getWritableDatabase();
         writeableDatabase.insert(Schema.TABLE_MY_TASKS, Schema.TITLE,contentValues);
         writeableDatabase.close();
     }
 
-    public ArrayList<Task> getAllTasks(){
+    public ArrayList<Task> getAllTasks() {
         SQLiteDatabase writeableDatabase = this.getWritableDatabase();
-        Cursor taskCursor = writeableDatabase.rawQuery(SELECT_ALL_TASKS,null);
-        ArrayList<Task> books = new ArrayList<>();
-        if(taskCursor.moveToFirst()){
-            do{
-                String Title = taskCursor.getString(0);
-                String Content = taskCursor.getString(1);
-                String Category = taskCursor.getString(2);
-                String Status = taskCursor.getString(3);
-                books.add(new Task(Title, Content, Category, Status));
-            }while(taskCursor.moveToNext());
+        Cursor taskCursor = writeableDatabase.rawQuery(SELECT_ALL_TASKS, null);
+        ArrayList<Task> tasks = new ArrayList<>();
+        if (taskCursor.moveToFirst()) {
+            do {
+                String title = taskCursor.getString(0);
+                String content = taskCursor.getString(1);
+                String category = taskCursor.getString(2);
+                String status = taskCursor.getString(3);
+                tasks.add(new Task(title, content, category, status));
+            } while (taskCursor.moveToNext());
         }
         taskCursor.close();
         writeableDatabase.close();
-        return books;
+        return tasks;
     }
 
     public static class Schema {
@@ -83,6 +83,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
         static final String CATEGORY = "category";
         static final String TITLE = "title";
         static final String CONTENT = "content";
+        static final String STATUS="status";
     }
 }
 

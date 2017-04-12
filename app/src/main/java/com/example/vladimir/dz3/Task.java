@@ -30,4 +30,19 @@ public class Task {
         return mStatus;
     }
 
+    public void setTitle(String mTitle) {
+        this.mTitle = mTitle;
+    }
+
+    public void setContent(String mContent) {
+        this.mContent = mContent;
+    }
+
+    public void setCategory(String mCategory) {
+        this.mCategory = mCategory;
+    }
+
+    public void setStatus(String mStatus) {
+        this.mStatus = mStatus;
+    }
 }

@@ -37,16 +37,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     }
     private ArrayList<Task> loadTasks() {
-        ArrayList<Task> tasks = new ArrayList<>();
-        tasks.add(new Task("The return of the king","J.R.R. Tolkien", "gfdsag", "Top"));
-        tasks.add(new Task("A game of thrones","G.R.R. Martin", "fdgha", "Medium"));
-        tasks.add(new Task("A clash of kings","G.R.R. Martin", "gfag", "Top"));
-        tasks.add(new Task("A storm of swords","G.R.R. Martin", "gasdfgd", "Normal"));
-        tasks.add(new Task("A feast for crows","G.R.R. Martin", "fgasdf", "Normal"));
-        tasks.add(new Task("A dance with dragons","G.R.R. Martin", "gdsagds", "Top"));
-        tasks.add(new Task("The winds of winter","G.R.R. Martin", "gdsagas", "Top"));
-        tasks.add(new Task("A dream of spring","G.R.R. Martin", "gdsagdsa", "Medium"));
-        return tasks;
+        return TaskDBHelper.getInstance(this).getAllTasks();
     }
 
     @Override
