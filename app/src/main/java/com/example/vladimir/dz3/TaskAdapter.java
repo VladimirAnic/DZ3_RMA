@@ -50,12 +50,17 @@ public class TaskAdapter extends BaseAdapter {
         taskViewHolder.tvTaskTitle.setText(task.getTitle());
         taskViewHolder.tvTaskContent.setText(task.getContent());
         taskViewHolder.tvTaskCategory.setText(task.getCategory());
-        if (task.getStatus() == "Top") {
-            convertView.setBackgroundResource(R.drawable.priority_top);
-        } else if (task.getStatus() == "Medium") {
-            convertView.setBackgroundResource(R.drawable.priority_medium);
-        } else if (task.getStatus() == "Normal") {
-            convertView.setBackgroundResource(R.drawable.priority_normal);
+
+        switch (task.getStatus()) {
+            case ("Top"):
+                convertView.setBackgroundResource(R.drawable.priority_top);
+                break;
+            case ("Medium"):
+                convertView.setBackgroundResource(R.drawable.priority_medium);
+                break;
+            case ("Normal"):
+                convertView.setBackgroundResource(R.drawable.priority_normal);
+                break;
         }
         return convertView;
     }

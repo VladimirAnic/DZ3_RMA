@@ -57,6 +57,12 @@ public class TaskDBHelper extends SQLiteOpenHelper {
         writeableDatabase.close();
     }
 
+    public void deleteTasks(Task task) {
+        SQLiteDatabase writableDatabase = this.getWritableDatabase();
+        writableDatabase.delete(Schema.TABLE_MY_TASKS, Schema.TITLE + " = ?", new String[]{task.getTitle()});
+        writableDatabase.close();
+    }
+
     public ArrayList<Task> getAllTasks() {
         SQLiteDatabase writeableDatabase = this.getWritableDatabase();
         Cursor taskCursor = writeableDatabase.rawQuery(SELECT_ALL_TASKS, null);
