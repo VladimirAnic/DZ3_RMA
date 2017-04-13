@@ -50,8 +50,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         "Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+
                                 mTaskAdapter.delete(position);
-                                dialog.cancel();
+
                             }
                         });
 
@@ -59,17 +60,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         "No",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
                             }
                         });
 
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
-
                 return true;
             }
         });
-
     }
     private ArrayList<Task> loadTasks() {
         return TaskDBHelper.getInstance(this).getAllTasks();
