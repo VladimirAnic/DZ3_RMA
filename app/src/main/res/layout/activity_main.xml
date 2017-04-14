@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/background"
-    android:layout_gravity="top">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <ListView
-        android:id="@+id/lvMain"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/llButtons"
-        android:layout_weight="1"
-        android:background="@drawable/background">
-
-    </ListView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
+        android:layout_gravity="top"
         android:background="@drawable/background"
-        android:gravity="center|bottom"
-        android:id="@+id/llButtons">
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/bNewCategory"
-            android:layout_width="0dp"
+        <ListView
+            android:id="@+id/lvMain"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/bNewTask"
-            android:layout_weight="0.5"
-            android:text="@string/text_new_category"/>
+            android:layout_above="@+id/llButtons"
+            android:layout_weight="1"
+            android:background="@drawable/background">
 
-        <Button
-            android:id="@+id/bNewTask"
-            android:layout_width="0dp"
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="@string/text_new_task" />
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/background"
+            android:gravity="center|bottom"
+            android:orientation="horizontal">
 
-    </LinearLayout>
-</RelativeLayout>
+            <Button
+                android:id="@+id/bNewCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/bNewTask"
+                android:layout_weight="0.5"
+                android:text="@string/text_new_category" />
+
+            <Button
+                android:id="@+id/bNewTask"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/text_new_task" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

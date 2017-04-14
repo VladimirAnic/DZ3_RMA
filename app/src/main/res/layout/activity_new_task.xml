@@ -1,77 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <TextView
-        android:id="@+id/tvAddNewTask"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_new_task"
-        android:textSize="@dimen/heading_size" />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etNewTask"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_new_category"
-        android:hint="@string/et_new_task" />
+        <TextView
+            android:id="@+id/tvAddNewTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_new_task"
+            android:textSize="@dimen/heading_size" />
 
-    <TextView
-        android:id="@+id/tvAddNewContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text_new_task_content"
-        android:layout_marginTop="@dimen/margin_new_content_text" />
+        <EditText
+            android:id="@+id/etNewTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_new_category"
+            android:hint="@string/et_new_task" />
 
-    <EditText
-        android:id="@+id/etNewTaskContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_new_category"
-        android:hint="@string/et_new_task_content" />
+        <TextView
+            android:id="@+id/tvAddNewContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_new_content_text"
+            android:text="@string/text_new_task_content" />
 
-    <TextView
-        android:id="@+id/tvAddSelectPriority"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text_select_priority"
-        android:layout_marginTop="@dimen/margin_new_content_text" />
+        <EditText
+            android:id="@+id/etNewTaskContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_new_category"
+            android:hint="@string/et_new_task_content" />
 
-    <Spinner
-        android:id="@+id/spPriority"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_new_task_spinner"
-        android:entries="@array/priority"
-        android:prompt="@string/message_priority"
-        android:spinnerMode="dropdown" />
+        <TextView
+            android:id="@+id/tvAddSelectPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_new_content_text"
+            android:text="@string/text_select_priority" />
 
-    <TextView
-        android:id="@+id/tvSelectCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text_select_category"
-        android:layout_marginTop="@dimen/margin_new_content_text" />
+        <Spinner
+            android:id="@+id/spPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_new_task_spinner"
+            android:entries="@array/priority"
+            android:prompt="@string/message_priority"
+            android:spinnerMode="dropdown" />
 
-    <Spinner
-        android:id="@+id/spCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_new_task_spinner"
-        android:prompt="@string/message_priority"
-        android:spinnerMode="dropdown" />
+        <TextView
+            android:id="@+id/tvSelectCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_new_content_text"
+            android:text="@string/text_select_category" />
 
-
-    <Button
-        android:id="@+id/bAddNewTask"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin_new_task_btn"
-        android:layout_marginRight="@dimen/side_margin_new_task_btn"
-        android:layout_marginTop="@dimen/margin_new_task_btn"
-        android:text="@string/btn_add_new_task" />
+        <Spinner
+            android:id="@+id/spCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_new_task_spinner"
+            android:prompt="@string/message_priority"
+            android:spinnerMode="dropdown" />
 
 
-</LinearLayout>
+        <Button
+            android:id="@+id/bAddNewTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin_new_task_btn"
+            android:layout_marginRight="@dimen/side_margin_new_task_btn"
+            android:layout_marginTop="@dimen/margin_new_task_btn"
+            android:text="@string/btn_add_new_task" />
+
+
+    </LinearLayout>
+</ScrollView>
