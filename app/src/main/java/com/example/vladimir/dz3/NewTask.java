@@ -9,13 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.example.vladimir.dz3.R.id.etNewCategory;
 import static com.example.vladimir.dz3.R.id.lvMain;
 
 public class NewTask extends Activity implements View.OnClickListener {
 
-    Spinner spPriority;
-    EditText etNewTaskContent,etNewCategory, etTitle;
+    Spinner spPriority, spCategory;
+    EditText etNewTaskContent, etTitle;
     Button bAddNewTask;
 
     @Override
@@ -29,8 +32,9 @@ public class NewTask extends Activity implements View.OnClickListener {
         this.spPriority = (Spinner) findViewById(R.id.spPriority);
         this.etTitle = (EditText) findViewById(R.id.etNewTask);
         this.etNewTaskContent = (EditText) findViewById(R.id.etNewTaskContent);
-        this.etNewCategory = (EditText) findViewById(R.id.etNewCategory);
         this.bAddNewTask = (Button) findViewById(R.id.bAddNewTask);
+        this.spCategory = (Spinner) findViewById(R.id.spCategory);
+        loadSpinnerData();
 
         ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
                 .createFromResource(this, R.array.priority,
@@ -41,7 +45,21 @@ public class NewTask extends Activity implements View.OnClickListener {
         spPriority.setAdapter(staticAdapter);
 
 
+
+
         this.bAddNewTask.setOnClickListener(this);
+    }
+
+    private void loadSpinnerData() {
+        TaskDBHelper db = new TaskDBHelper(getApplicationContext());
+        ArrayList<String> labels = db.getAllCategories();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, labels);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spCategory.setAdapter(dataAdapter);
     }
 
     @Override
@@ -51,8 +69,9 @@ public class NewTask extends Activity implements View.OnClickListener {
 
         String Title = etTitle.getText().toString();
         String Content = etNewTaskContent.getText().toString();
-        String Category = etNewCategory.getText().toString();
+        String Category = spCategory.getSelectedItem().toString();
         String Status = spPriority.getSelectedItem().toString();
+
 
         Task task = new Task(Title,Content,Category,Status);
         TaskDBHelper.getInstance(getApplicationContext()).insertTask(task);

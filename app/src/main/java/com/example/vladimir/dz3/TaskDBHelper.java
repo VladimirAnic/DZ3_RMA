@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class TaskDBHelper extends SQLiteOpenHelper {
 
     private static TaskDBHelper mTaskDBHelper = null;
-    private TaskDBHelper (Context context){
+    public TaskDBHelper(Context context){
         super(context.getApplicationContext(), Schema.DATABASE_NAME,null,Schema.SCHEMA_VERSION);
     }
 
@@ -42,7 +42,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
 
     //SQL statements
     static final String CREATE_TABLE_MY_TASKS="CREATE TABLE "+Schema.TABLE_MY_TASKS+"("+Schema.TITLE+" TEXT, "+Schema.CONTENT+" TEXT, "+Schema.CATEGORY+ " TEXT, "+Schema.STATUS+" TEXT);";
-    static final String CREATE_TABLE_MY_CATEGORY="CREATE TABLE "+SchemaC.TABLE_MY_CATEGORY+"("+Schema.CATEGORY+" TEXT)";
+    static final String CREATE_TABLE_MY_CATEGORY = "CREATE TABLE " + SchemaC.TABLE_MY_CATEGORY + "(" + SchemaC.CATEROGRY_ROW + " TEXT);";
     static final String DROP_TABLE_MY_CATEGORY = "DROP TABLE IF EXISTS " + SchemaC.TABLE_MY_CATEGORY;
     static final String DROP_TABLE_MY_TASKS = "DROP TABLE IF EXISTS " + Schema.TABLE_MY_TASKS;
     static final String SELECT_ALL_TASKS="SELECT * FROM "+Schema.TABLE_MY_TASKS;
@@ -113,7 +113,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
     }
 
     public static class Schema {
-        private static final int SCHEMA_VERSION = 1;
+        private static final int SCHEMA_VERSION = 2;
         private static final String DATABASE_NAME = "tasks.db";
         static final String TABLE_MY_TASKS = "my_tasks";
         static final String CATEGORY = "category";

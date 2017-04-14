@@ -18,6 +18,15 @@
         android:hint="@string/et_new_category"
         android:layout_marginTop="@dimen/margin_new_category"/>
 
+    <ListView
+        android:id="@+id/lvCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bAddNewCategory"
+        android:layout_marginTop="@dimen/margin_new_category"
+        android:layout_weight="1">
+    </ListView>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

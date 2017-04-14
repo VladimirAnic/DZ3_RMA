@@ -11,6 +11,8 @@
     <string name="btn_add_new_task">Add new task</string>
     <string name="et_new_task_content">Content</string>
     <string name="text_new_task_content">Add new content:</string>
+    <string name="text_select_priority">Select priority:</string>
+    <string name="text_select_category">Select category:</string>
 
 
     <string-array name="priority">
@@ -19,10 +21,5 @@
         <item>Normal</item>
     </string-array>
 
-    <string-array name="category">
-        <item>Home</item>
-        <item>Work</item>
-        <item>School</item>
-    </string-array>
 
 </resources>
