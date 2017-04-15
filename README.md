@@ -20,7 +20,7 @@ After creating a category the user is able to choose form a spinner which catego
 is created, then  a Toast message will display saying that no category is selected.
 It is also possible to create completely blank tasks with the exception of priorities(which are mandatory).
 <h4>Testing</h4>
-Testing was done on Vivax tablet and Meizu MX3 devices.
+Testing was done on Vivax tablet and Meizu MX3 devices. Screenshots can be found in MeizuMX3 and Vivax tablet files.
 </p>
 
 <p>
