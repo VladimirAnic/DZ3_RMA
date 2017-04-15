@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:background="@drawable/background"
+    >
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/background"
+        >
 
         <TextView
             android:id="@+id/tvAddNewTask"
@@ -67,7 +72,14 @@
             android:prompt="@string/message_priority"
             android:spinnerMode="dropdown" />
 
-
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@drawable/background"
+        >
         <Button
             android:id="@+id/bAddNewTask"
             android:layout_width="match_parent"
@@ -76,7 +88,6 @@
             android:layout_marginRight="@dimen/side_margin_new_task_btn"
             android:layout_marginTop="@dimen/margin_new_task_btn"
             android:text="@string/btn_add_new_task" />
-
-
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

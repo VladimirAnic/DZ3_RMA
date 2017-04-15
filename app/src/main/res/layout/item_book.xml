@@ -20,11 +20,10 @@
         android:textColor="@color/textColor"/>
     <TextView
         android:id="@+id/tvTaskCategory"
-        android:layout_below="@id/tvTaskTitle"
-        android:layout_alignParentRight="true"
+        android:layout_alignRight="@id/tvTaskTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/textPadding"
+        android:paddingRight="@dimen/textPadding"
         android:textSize="@dimen/textSize"
         android:textColor="@color/textColor"/>
 

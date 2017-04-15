@@ -86,6 +86,7 @@ public class NewCategory extends Activity implements View.OnClickListener {
         TaskDBHelper.getInstance(getApplicationContext()).insertCategory(Category);
         explicitIntent.setClass(getApplicationContext(), MainActivity.class);
         startActivity(explicitIntent);
+        finish();
 
     }
 }

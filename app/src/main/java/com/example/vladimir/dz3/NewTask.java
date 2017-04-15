@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,9 +70,17 @@ public class NewTask extends Activity implements View.OnClickListener {
 
         String Title = etTitle.getText().toString();
         String Content = etNewTaskContent.getText().toString();
-        String Category = spCategory.getSelectedItem().toString();
         String Status = spPriority.getSelectedItem().toString();
+        String Category;
 
+        if(spCategory != null && spCategory.getSelectedItem() != null)
+        {
+            Category = spCategory.getSelectedItem().toString();
+        }
+        else{
+            Category="";
+            Toast.makeText(getApplicationContext(), "Category not selected!", Toast.LENGTH_SHORT).show();
+        }
 
         Task task = new Task(Title,Content,Category,Status);
         TaskDBHelper.getInstance(getApplicationContext()).insertTask(task);
